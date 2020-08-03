@@ -30,3 +30,4 @@ jobs:
         uses: jonelantha/gatsby-s3-action@v1
         with:
           dest-s3-bucket: ${{ secrets.BPS_S3_BUCKET }}
+          public-source-path: ./app/build/
