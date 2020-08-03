@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Jim & Meagan`,
     description: `Our adventure beings in 2021`,
-    author: `@gatsbyjs`,
+    author: `@jim_hill_r`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,17 +18,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Jim & Meagan`,
+        short_name: `J&M Wedding`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#99a5b1`,
+        theme_color: `#99a5b1`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`
   ],
 }
