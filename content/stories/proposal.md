@@ -1,3 +1,8 @@
+---
+slug: "/stories/proposal"
+title: "The Proposal"
+---
+
 # The Proposal
 
 ## Pine Plains
