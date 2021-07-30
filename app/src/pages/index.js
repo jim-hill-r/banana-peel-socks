@@ -27,7 +27,8 @@ const clues = [
       },
       "name": "Ground Cover Garden",
       "clue": "What is the first word in the bottom left of the sign?",
-      "answer": "visitor"
+      "answer": "visitor",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -36,7 +37,8 @@ const clues = [
       },
       "name": "Maze Garden",
       "clue": "What word is next to #3?",
-      "answer": "viburnum"
+      "answer": "viburnum",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -45,7 +47,8 @@ const clues = [
       },
       "name": "Children's Garden",
       "clue": "What is the joke answer?",
-      "answer": "palm"
+      "answer": "palm",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -54,7 +57,8 @@ const clues = [
       },
       "name": "Evergreen Tree Walk",
       "clue": "What is the top word in the red owl?",
-      "answer": "northern"
+      "answer": "northern",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -63,7 +67,8 @@ const clues = [
       },
       "name": "Human Nature",
       "clue": "What word is on the bottom of the sign?",
-      "answer": "heterolepis"
+      "answer": "heterolepis",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -72,7 +77,8 @@ const clues = [
       },
       "name": "Human Nature Sentient",
       "clue": "What is the @ on the sign?",
-      "answer": "danielpopper"
+      "answer": "danielpopper",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -81,7 +87,8 @@ const clues = [
       },
       "name": "Bald Cypress",
       "clue": "What is the second word down on the sign?",
-      "answer": "taxodium"
+      "answer": "taxodium",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -90,7 +97,8 @@ const clues = [
       },
       "name": "Bench",
       "clue": "What word is on the bench?",
-      "answer": "graceful"
+      "answer": "graceful",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -99,7 +107,8 @@ const clues = [
       },
       "name": "Big Rock",
       "clue": "Who wrote the quote in the top right corner?",
-      "answer": "muir"
+      "answer": "muir",
+      "funfact": "TODO: Fun fact about us."
     },
     {
       "loc": {
@@ -108,19 +117,23 @@ const clues = [
       },
       "name": "Human Nature Basillica",
       "clue": "What is the first word on the sign?",
-      "answer": "bluebird"
+      "answer": "bluebird",
+      "funfact": "TODO: Fun fact about us."
     }
   ]
 
-const IndexPage = () => {
+const ClueContent = ({index, clue}) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+
+  const [guess, setGuess] = React.useState('')
+  const [open, setOpen] = React.useState(false)
+  const [correct, setCorrect] = React.useState(false)
 
   const checkSubmit = (clue) => {
-    if(clue.guess && clue.guess.toLowerCase().includes(clue.answer)) {
-      clue.correct = true
-      setOpen(true)
+    if(guess.toLowerCase().includes(clue.answer)) {
+      setCorrect(true)
     }
+    setOpen(true)
   }
 
   const handleClose = () => {
@@ -128,42 +141,67 @@ const IndexPage = () => {
   }
 
   return (
+    <>
+      <Card key={index}> 
+        <CardContent>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            {index+1}) {clue.name}
+          </Typography>
+          <Typography variant="h5" component="h2">
+            {clue.loc.lat}, {clue.loc.lon}
+          </Typography>
+          <Typography variant="body2" component="p">
+            {clue.clue}
+          </Typography>
+          <Input className={classes.action} onChange={(event) => setGuess(event.target.value)} value={clue.guess}></Input> 
+          <Button className={classes.action} onClick={() => checkSubmit(clue)} size="small">I found it!</Button>
+        </CardContent>
+      </Card>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle id="alert-dialog-title">
+          {correct &&             
+            "You got it!"
+          }
+          {!correct &&
+            "Nice try..."
+          }
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            {correct &&             
+              clue.name + ':' + clue.funfact
+            }
+            {!correct &&
+              'That is not correct.'
+            }
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary" autoFocus>
+            {correct &&             
+              "Let's find the next one!"
+            }
+            {!correct &&
+              'Try again!'
+            }
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  )
+}
+
+const IndexPage = () => { 
+  return (
     <Layout>
       <SEO title="Welcome" />
       <h1>Geocaching Scavenger Hunt</h1>
       <p> For each location described below, head over there and answer the clue. Put your answer in the box next to the clue.</p>
       <div style={{ marginBottom: `1.45rem` }}>
           {clues.map((clue, index) =>
-            <Card key={index}> 
-              <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
-                  {index+1}) {clue.name}
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  {clue.loc.lat}, {clue.loc.lon}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {clue.clue}
-                </Typography>
-                <Input className={classes.action} onChange={(event) => clue.guess = event.target.value} value={clue.guess}></Input> 
-                <Button className={classes.action} onClick={() => checkSubmit(clue)} size="small">I found it!</Button>
-              </CardContent>
-            </Card>
+            <ClueContent index={index} clue={clue}></ClueContent>
           )}
       </div>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle id="alert-dialog-title">{"You found it!"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            You are the best. Here is a fun fact about Meagan and me!
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary" autoFocus>
-            Let's try the next one!
-          </Button>
-        </DialogActions>
-      </Dialog>
     </Layout>
   )
 }
