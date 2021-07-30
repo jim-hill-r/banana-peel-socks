@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Button, Typography, Input, Dialog, DialogTitle, DialogContent, DialogContentActions, DialogContentText, DialogActions } from '@material-ui/core';
+import { Card, CardContent, Button, Typography, Input, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -132,6 +132,8 @@ const ClueContent = ({index, clue}) => {
   const checkSubmit = (clue) => {
     if(guess.toLowerCase().includes(clue.answer)) {
       setCorrect(true)
+    } else {
+      setCorrect(false)
     }
     setOpen(true)
   }
@@ -154,7 +156,14 @@ const ClueContent = ({index, clue}) => {
             {clue.clue}
           </Typography>
           <Input className={classes.action} onChange={(event) => setGuess(event.target.value)} value={clue.guess}></Input> 
-          <Button className={classes.action} onClick={() => checkSubmit(clue)} size="small">I found it!</Button>
+          <Button className={classes.action} onClick={() => checkSubmit(clue)} size="small">
+            {correct &&             
+              "Correct"
+            }
+            {!correct &&
+              "Check answer"
+            }
+          </Button>
         </CardContent>
       </Card>
       <Dialog open={open} onClose={handleClose}>
@@ -169,7 +178,7 @@ const ClueContent = ({index, clue}) => {
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             {correct &&             
-              clue.name + ':' + clue.funfact
+              clue.funfact
             }
             {!correct &&
               'That is not correct.'
