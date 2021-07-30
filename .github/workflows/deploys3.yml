@@ -31,4 +31,3 @@ jobs:
         with:
           dest-s3-bucket: ${{ secrets.BPS_S3_BUCKET }}
           public-source-path: ./app/public/
-          dest-s3-path: hunt
