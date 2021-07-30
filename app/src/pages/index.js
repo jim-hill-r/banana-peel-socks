@@ -37,6 +37,78 @@ const clues = [
       "name": "Maze Garden",
       "clue": "What word is next to #3?",
       "answer": "viburnum"
+    },
+    {
+      "loc": {
+        "lat": 41.813974,
+        "lon": -88.069942
+      },
+      "name": "Children's Garden",
+      "clue": "What is the joke answer?",
+      "answer": "palm"
+    },
+    {
+      "loc": {
+        "lat": 41.813310,
+        "lon": -88.069033
+      },
+      "name": "Evergreen Tree Walk",
+      "clue": "What is the top word in the red owl?",
+      "answer": "northern"
+    },
+    {
+      "loc": {
+        "lat": 41.814464,
+        "lon": -88.068324
+      },
+      "name": "Human Nature",
+      "clue": "What word is on the bottom of the sign?",
+      "answer": "heterolepis"
+    },
+    {
+      "loc": {
+        "lat": 41.817078,
+        "lon": -88.065364
+      },
+      "name": "Human Nature Sentient",
+      "clue": "What is the @ on the sign?",
+      "answer": "danielpopper"
+    },
+    {
+      "loc": {
+        "lat": 41.819684,
+        "lon": -88.062924
+      },
+      "name": "Bald Cypress",
+      "clue": "What is the second word down on the sign?",
+      "answer": "taxodium"
+    },
+    {
+      "loc": {
+        "lat": 41.817410,
+        "lon": -88.068954
+      },
+      "name": "Bench",
+      "clue": "What word is on the bench?",
+      "answer": "graceful"
+    },
+    {
+      "loc": {
+        "lat": 41.818502,
+        "lon": -88.046527
+      },
+      "name": "Big Rock",
+      "clue": "Who wrote the quote in the top right corner?",
+      "answer": "muir"
+    },
+    {
+      "loc": {
+        "lat": 41.820593,
+        "lon": -88.081896
+      },
+      "name": "Human Nature Basillica",
+      "clue": "What is the first word on the sign?",
+      "answer": "bluebird"
     }
   ]
 
