@@ -28,7 +28,7 @@ const clues = [
       "name": "Ground Cover Garden",
       "clue": "What is the first word in the bottom left of the sign?",
       "answer": "visitor",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Did you know? The first thing Jim & Meagan ever owned together was a Morton Arboretum membership!"
     },
     {
       "loc": {
@@ -38,7 +38,7 @@ const clues = [
       "name": "Maze Garden",
       "clue": "What word is next to #3?",
       "answer": "viburnum",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Exploring the maze? Jim & Meagan also love a hidden lake nearby, but it's very difficult to find. Similarly, they have a special road only they know about in Downer's Grove called Floyd road."
     },
     {
       "loc": {
@@ -48,7 +48,7 @@ const clues = [
       "name": "Children's Garden",
       "clue": "What is the joke answer?",
       "answer": "palm",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Fun fact: The Nutcracker in Chicago is performed at the theatre on Ida B Wells, not on the Mag Mile. Meagan brought Jim to see the Nutcracker for the first time ever in 2019."
     },
     {
       "loc": {
@@ -58,7 +58,7 @@ const clues = [
       "name": "Evergreen Tree Walk",
       "clue": "What is the top word in the red owl?",
       "answer": "northern",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Have you heard an owl call? Jim & Meagan learned how to make owl calls while visiting Turkey Run state park in Indiana!"
     },
     {
       "loc": {
@@ -68,7 +68,7 @@ const clues = [
       "name": "Human Nature",
       "clue": "What word is on the bottom of the sign?",
       "answer": "heterolepis",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Jim & Meagan love alliteration. We once spent an entire week texting with only alliteration!"
     },
     {
       "loc": {
@@ -78,7 +78,7 @@ const clues = [
       "name": "Human Nature Sentient",
       "clue": "What is the @ on the sign?",
       "answer": "danielpopper",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Everyone loves some good foreshadowing. One of Jim & Meagan's earliest dates was a fourth of July weekend in an RV. They ended up getting engaged in this same town, Pine Plains."
     },
     {
       "loc": {
@@ -88,7 +88,7 @@ const clues = [
       "name": "Bald Cypress",
       "clue": "What is the second word down on the sign?",
       "answer": "taxodium",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "The first conversation Jim & Meagan ever had we completely in pirate speak! Yar be scallywags!"
     },
     {
       "loc": {
@@ -98,7 +98,7 @@ const clues = [
       "name": "Bench",
       "clue": "What word is on the bench?",
       "answer": "graceful",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Sometimes a place to sit is hard to find. During the pandemic, Jim & Meagan had to use their bathroom as an office space for work calls."
     },
     {
       "loc": {
@@ -108,7 +108,7 @@ const clues = [
       "name": "Big Rock",
       "clue": "Who wrote the quote in the top right corner?",
       "answer": "muir",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "One week early in Jim & Meagan's relationship, both phones stopped sending texts and they didn't know. They both thought the other was ghosting them. It was the worst week of their relationship. Never underestimate a good phone call!"
     },
     {
       "loc": {
@@ -118,7 +118,7 @@ const clues = [
       "name": "Human Nature Basillica",
       "clue": "What is the first word on the sign?",
       "answer": "bluebird",
-      "funfact": "TODO: Fun fact about us."
+      "funfact": "Want more fun? Find Jim & Meagan's favorite geocache at Waterfall Glen Forest Preserve. It is known as the 'Love Log'."
     }
   ]
 
