@@ -88,7 +88,7 @@ const clues = [
       "name": "Bald Cypress",
       "clue": "What is the second word down on the sign?",
       "answer": "taxodium",
-      "funfact": "The first conversation Jim & Meagan ever had we completely in pirate speak! Yar be scallywags!"
+      "funfact": "The first conversation Jim & Meagan ever had was completely in pirate speak! Yar be scallywags!"
     },
     {
       "loc": {
