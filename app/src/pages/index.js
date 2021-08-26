@@ -4,7 +4,6 @@ import { Card, CardContent, Button, Typography, Input, Dialog, DialogTitle, Dial
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 const useStyles = makeStyles({
   root: {
@@ -125,19 +124,6 @@ const clues = [
   ]
 
 const ClueContent = ({index, clue}) => {
-  const image = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: clue.imagePath }) {
-        childImageSharp {
-          # Specify the image processing specifications right in the query.
-          # Makes it trivial to update as your page's design changes.
-          fixed(width: 125, height: 125) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
 
   const classes = useStyles();
 
