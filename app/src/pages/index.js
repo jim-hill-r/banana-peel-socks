@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, Button, Typography, Input, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const useStyles = makeStyles({
   root: {
@@ -28,7 +30,7 @@ const clues = [
       "name": "Ground Cover Garden",
       "clue": "What is the first word in the bottom left of the sign?",
       "answer": "visitor",
-      "funfact": "Did you know? The first thing Jim & Meagan ever owned together was a Morton Arboretum membership!"
+      "funfact": "Did you know? The first thing Jim & Meagan ever owned together was a Morton Arboretum membership!",
     },
     {
       "loc": {
@@ -65,8 +67,8 @@ const clues = [
         "lat": 41.814464,
         "lon": -88.068324
       },
-      "name": "Human Nature",
-      "clue": "What word is on the bottom of the sign?",
+      "name": "Meadow Lake Grassy Burm",
+      "clue": "What word is on the bottom of the small plant label?",
       "answer": "heterolepis",
       "funfact": "Jim & Meagan love alliteration. We once spent an entire week texting with only alliteration!"
     },
@@ -115,14 +117,28 @@ const clues = [
         "lat": 41.820593,
         "lon": -88.081896
       },
-      "name": "Human Nature Basillica",
-      "clue": "What is the first word on the sign?",
+      "name": "Flight of the Basillica",
+      "clue": "What is the first word on the birdhouse?",
       "answer": "bluebird",
       "funfact": "Want more fun? Find Jim & Meagan's favorite geocache at Waterfall Glen Forest Preserve. It is known as the 'Love Log'."
     }
   ]
 
 const ClueContent = ({index, clue}) => {
+  const image = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: clue.imagePath }) {
+        childImageSharp {
+          # Specify the image processing specifications right in the query.
+          # Makes it trivial to update as your page's design changes.
+          fixed(width: 125, height: 125) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
   const classes = useStyles();
 
   const [guess, setGuess] = React.useState('')
@@ -205,7 +221,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Welcome" />
       <h1>Geocaching Scavenger Hunt</h1>
-      <p> For each location described below, head over there and answer the clue. Put your answer in the box next to the clue.</p>
+      <p> For each location described below, head over there and answer the clue. The numbers are GPS coordinates. You should be able to use your phone to navigate there! Put your answer in the box next to the clue. Note: Your answers will not save so do not close the app.</p>
       <div style={{ marginBottom: `1.45rem` }}>
           {clues.map((clue, index) =>
             <ClueContent index={index} clue={clue}></ClueContent>
